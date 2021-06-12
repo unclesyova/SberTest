@@ -1,7 +1,7 @@
 import unittest
 
 
-from functions import dict_to_str
+from functions import dict_to_str, sort_by_freq
 
 
 class TestFunctions(unittest.TestCase):
@@ -13,4 +13,13 @@ class TestFunctions(unittest.TestCase):
         self.assertEqual(dict_to_str(dict1), 'Hello')
         self.assertEqual(dict_to_str(dict2), 'Another')
         self.assertEqual(dict_to_str(dict3), 'Assess')
+
+
+    def test_sort_by_freq(self):
+        lst1 = [4,4,6,4,2,2,4,6]
+        lst2 = [1,1,5,6,8,1,1,3,3,3,3]
+        lst3 = [1,2,3,4,5]
+        self.assertEqual(sort_by_freq(lst1), [4,4,4,4,6,6,2,2])
+        self.assertEqual(sort_by_freq(lst2), [1,1,1,1,3,3,3,3,5,6,8])
+        self.assertEqual(sort_by_freq(lst3), [1,2,3,4,5])
 
